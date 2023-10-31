@@ -1,27 +1,37 @@
-import { CartIcon, ClearCartIcon, RemoveFromCartIcon } from "./Icons.jsx";
+import { RemoveFromCartIcon } from "./Icons.jsx";
+import { usePortfolio } from "../hooks/usePortfolio.js";
+
+function PortfolioItem ({opening, title}) {
+    const {removeFromPortfolio} = usePortfolio()
+    return(
+        <li>
+            <div>
+                <strong>{title}</strong>
+            </div>
+
+            <footer>
+                <small>
+                    COP - {opening}
+                </small>
+            </footer>
+            <button onClick={removeFromPortfolio}>
+                <RemoveFromCartIcon/>
+            </button>
+        </li>
+    )
+}
+
 
 export function Portfolio () {
+    const {portfolio} = usePortfolio()
+    
     return (
-        <>
-          <label className="cart-button">
-            <CartIcon/>
-          </label>
-
-          <aside className="cart">
+        <main>
             <ul>
-                <li>
-                    <div>
-                        <strong>Fondo 1</strong>
-                    </div>
-
-                    <footer>
-                        <small>
-                            500000
-                        </small>
-                    </footer>
-                </li>
+                {portfolio.map(product => (
+                    <PortfolioItem key={product.id} {...product} />
+                ))}
             </ul>
-          </aside>
-        </>
+        </main>
     )
 }

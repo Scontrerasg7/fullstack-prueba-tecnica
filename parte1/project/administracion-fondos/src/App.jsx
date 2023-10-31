@@ -5,15 +5,17 @@ import { Portfolio } from "./components/Portfolio.jsx"
 
 import { products as initialProducts } from "./mocks/products.json"
 
-import { useFilters } from "./hooks/useFilters"
+import { PortfolioProvider } from "./context/portfolio.jsx"
+
+import { useFilters } from "./hooks/useFilters.js"
 
 function App() {
   const {filterProducts} = useFilters()
   const filteredProducts = filterProducts(initialProducts) 
 
   return (
-    <>
-      <div class="container">
+    <PortfolioProvider>
+      <div className="container">
         <div>
           <HeaderAdicion />
           <Products products={filteredProducts} />
@@ -24,7 +26,7 @@ function App() {
           <Portfolio />
         </div>
       </div>
-    </>
+    </PortfolioProvider>
   )
 }
 
