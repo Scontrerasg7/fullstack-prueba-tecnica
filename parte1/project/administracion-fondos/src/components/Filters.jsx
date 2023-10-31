@@ -1,9 +1,11 @@
 import './Filters.css'
+import { useFilters } from '../hooks/useFilters.js'
 
-export function Filters ({ onChange }) {
+export function Filters () {
+    const { setFilters } = useFilters()
 
     const handleChangeCategory = (event) => {
-        onChange(prevState => ({
+        setFilters(prevState => ({
             ...prevState,
             category: event.target.value
         }))

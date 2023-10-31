@@ -1,34 +1,19 @@
-import { useContext, useState } from "react"
+import { Products } from "./components/Products.jsx"
+import { Header } from "./components/Header"
 
 import { products as initialProducts } from "./mocks/products.json"
 
-import { Products } from "./components/Products.jsx"
-import { Header } from "./components/Header"
-import { FiltersContext } from "./context/filters"
-
-function useFilters () {
-  const { filters, setFilters } = useContext(FiltersContext)
-
-  const filterProducts = (products) => {
-    return products.filter(product => {
-      return (
-        filters.category == 'all' ||
-        filters.category == product.category
-      )
-   })
-  }
-
-  return {filterProducts, setFilters}
-}
+import { useState } from "react"
+import { useFilters } from "./hooks/useFilters"
 
 function App() {
   const [products] = useState(initialProducts)
-  const {filterProducts, setFilters} = useFilters()
+  const {filterProducts} = useFilters()
   const filteredProducts = filterProducts(products) 
 
   return (
     <>
-      <Header changeFilters={setFilters} />
+      <Header/>
       <Products products={filteredProducts} />
     </>
   )
