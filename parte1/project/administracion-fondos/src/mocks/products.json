@@ -3,31 +3,31 @@
         {
             "id":1001,
             "title":"FVP BTG Pactual Recaudadora",
-            "cathegory":"FVP",
+            "category":"FVP",
             "opening":75000
         },
         {
             "id":1002,
             "title":"FVP BTG Pactual Ecopetrol",
-            "cathegory":"FVP",
+            "category":"FVP",
             "opening":125000
         },
         {
             "id":1003,
             "title":"Deudaprivada",
-            "cathegory":"FIC",
+            "category":"FIC",
             "opening":50000
         },
         {
             "id":1004,
             "title":"Fondo Acciones",
-            "cathegory":"FIC",
+            "category":"FIC",
             "opening":250000
         },
         {
             "id":1005,
             "title":"FVP BTG Pactual Dinámica",
-            "cathegory":"FVP",
+            "category":"FVP",
             "opening":100000
         }       
     ]

@@ -8,7 +8,7 @@ export function Products ({ products }) {
                 {products.map(product => (
                     <li key={product.id}>
                         <div>
-                            <strong>{product.title}</strong>
+                            <strong>{product.title}</strong> - COP {product.opening}
                         </div>
                         <button>
                             <AddToCartIcon />
