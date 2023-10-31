@@ -1,9 +1,9 @@
 import { Filters } from './Filters.jsx'
 
-export function Header () {
+export function HeaderAdicion () {
     return(
         <header>
-            <h1>💰Administración de Fondos💰</h1>
+            <h1>💰Adición</h1>
             <Filters/>
         </header>
     )

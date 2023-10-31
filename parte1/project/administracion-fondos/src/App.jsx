@@ -1,20 +1,29 @@
 import { Products } from "./components/Products.jsx"
-import { Header } from "./components/Header"
+import { HeaderAdicion } from "./components/HeaderAdicion.jsx"
+import { HeaderAdmin } from "./components/HeaderAdmin.jsx"
+import { Portfolio } from "./components/Portfolio.jsx"
 
 import { products as initialProducts } from "./mocks/products.json"
 
-import { useState } from "react"
 import { useFilters } from "./hooks/useFilters"
 
 function App() {
-  const [products] = useState(initialProducts)
   const {filterProducts} = useFilters()
-  const filteredProducts = filterProducts(products) 
+  const filteredProducts = filterProducts(initialProducts) 
 
   return (
     <>
-      <Header/>
-      <Products products={filteredProducts} />
+      <div class="container">
+        <div>
+          <HeaderAdicion />
+          <Products products={filteredProducts} />
+        </div>
+
+        <div>
+          <HeaderAdmin />
+          <Portfolio />
+        </div>
+      </div>
     </>
   )
 }
