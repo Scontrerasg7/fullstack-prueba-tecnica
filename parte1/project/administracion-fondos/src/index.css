@@ -48,6 +48,10 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+button:disabled {
+  pointer-events: none; 
+  opacity: 0.3;
+}
 
 ul {
   list-style: none;
@@ -62,4 +66,8 @@ ul {
 .content {
   padding: 20px;
   width: 100%;
+}
+
+.money {
+  margin-bottom: -20px;
 }

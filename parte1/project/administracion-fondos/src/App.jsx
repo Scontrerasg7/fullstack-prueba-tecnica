@@ -5,16 +5,25 @@ import { Portfolio } from "./components/Portfolio.jsx"
 
 import { products as initialProducts } from "./mocks/products.json"
 
-import { PortfolioProvider } from "./context/portfolio.jsx"
-
 import { useFilters } from "./hooks/useFilters.js"
+import { usePortfolio } from "./hooks/usePortfolio.js"
 
 function App() {
   const {filterProducts} = useFilters()
   const filteredProducts = filterProducts(initialProducts) 
+  const portfolio = usePortfolio()
+
+  const totalInvestments = portfolio.portfolio.reduce((acc, product) => {
+    return acc + product.opening
+  }, 0)
+  const totalInvestmentsDisplay = (500000 - totalInvestments).toLocaleString("es-CO", {
+    style: "currency",
+    currency: "COP",
+  })
 
   return (
-    <PortfolioProvider>
+    <>
+      <h1 className="money">Monto Disponible <br/> {totalInvestmentsDisplay}</h1>
       <div className="container">
         <div className="content">
           <HeaderAdicion />
@@ -26,7 +35,7 @@ function App() {
           <Portfolio />
         </div>
       </div>
-    </PortfolioProvider>
+    </>
   )
 }
 

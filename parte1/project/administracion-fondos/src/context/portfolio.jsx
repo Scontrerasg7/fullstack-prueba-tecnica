@@ -6,12 +6,12 @@ export function PortfolioProvider ({ children }) {
     const [portfolio, setPortfolio] = useState([])
 
     const addToPortfolio = product => {
-    setPortfolio(prevState => ([
-        ...prevState,
-        {
-            ...product
-        }
-    ]))
+        setPortfolio(prevState => ([
+            ...prevState,
+            {
+                ...product
+            }
+        ]))
     }
 
     const removeFromPortfolio = id => {
