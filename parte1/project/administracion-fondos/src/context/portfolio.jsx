@@ -14,8 +14,8 @@ export function PortfolioProvider ({ children }) {
     ]))
     }
 
-    const removeFromPortfolio = product => {
-        setPortfolio(prevState => prevState.filter(item => item.id != product.id))
+    const removeFromPortfolio = id => {
+        setPortfolio(prevState => prevState.filter(item => item.id != id))
     }
 
     return (

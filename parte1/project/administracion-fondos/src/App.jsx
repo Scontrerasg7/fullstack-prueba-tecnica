@@ -16,12 +16,12 @@ function App() {
   return (
     <PortfolioProvider>
       <div className="container">
-        <div>
+        <div className="content">
           <HeaderAdicion />
           <Products products={filteredProducts} />
         </div>
 
-        <div>
+        <div className="content">
           <HeaderAdmin />
           <Portfolio />
         </div>

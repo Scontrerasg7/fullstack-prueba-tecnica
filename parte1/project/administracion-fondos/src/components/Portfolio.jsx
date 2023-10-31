@@ -1,7 +1,7 @@
 import { RemoveFromCartIcon } from "./Icons.jsx";
 import { usePortfolio } from "../hooks/usePortfolio.js";
 
-function PortfolioItem ({opening, title}) {
+function PortfolioItem ({opening, title, id}) {
     const {removeFromPortfolio} = usePortfolio()
     return(
         <li>
@@ -14,7 +14,7 @@ function PortfolioItem ({opening, title}) {
                     COP - {opening}
                 </small>
             </footer>
-            <button onClick={removeFromPortfolio}>
+            <button onClick={() => removeFromPortfolio(id)}>
                 <RemoveFromCartIcon/>
             </button>
         </li>
@@ -26,12 +26,10 @@ export function Portfolio () {
     const {portfolio} = usePortfolio()
     
     return (
-        <main>
-            <ul>
-                {portfolio.map(product => (
-                    <PortfolioItem key={product.id} {...product} />
-                ))}
-            </ul>
-        </main>
+        <ul>
+            {portfolio.map(product => (
+                <PortfolioItem key={product.id} {...product} />
+            ))}
+        </ul>
     )
 }

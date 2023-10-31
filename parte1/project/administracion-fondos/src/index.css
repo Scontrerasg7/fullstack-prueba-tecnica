@@ -58,3 +58,8 @@ ul {
   display: flex;
   width: 100%;
 }
+
+.content {
+  padding: 20px;
+  width: 100%;
+}
