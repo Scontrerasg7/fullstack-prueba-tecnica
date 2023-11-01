@@ -5,6 +5,19 @@ import { usePortfolio } from '../hooks/usePortfolio'
 export function Products ({ products }) {
     const {portfolio, addToPortfolio} = usePortfolio()
 
+    
+    const buttonClick = (product) => {
+        const totalInvestments = portfolio.reduce((acc, product) => {
+            return acc + product.opening
+        }, 0)
+        console.log(totalInvestments)
+        
+        if (product.opening < totalInvestments) {
+            alert(`No tiene saldo disponible para vincularse al fondo ${product.title}`);
+        } else {
+            addToPortfolio(product);
+        }
+    }
 
     return (
         <main className='products'>
@@ -17,7 +30,7 @@ export function Products ({ products }) {
                             <div>
                                 <strong>{product.title}</strong> - COP {product.opening}
                             </div>
-                            <button onClick={() => addToPortfolio(product)} disabled={isProductInPortfolio}>
+                            <button onClick={() => buttonClick(product)} disabled={isProductInPortfolio}>
                                 <AddToCartIcon />
                             </button>
                         </li>
