@@ -1,11 +1,15 @@
 import './Products.css'
 import { AddToCartIcon } from './Icons.jsx'
+
 import { usePortfolio } from '../hooks/usePortfolio'
+import { useHash } from '../hooks/useHash.js'
+
+import { v4 as uuidv4 } from 'uuid';
 
 export function Products ({ products }) {
     const {portfolio, addToPortfolio} = usePortfolio()
+    const {setHash} = useHash()
 
-    
     const buttonClick = (product) => {
         const totalInvestments = portfolio.reduce((acc, product) => {
             return acc + product.opening
@@ -14,6 +18,7 @@ export function Products ({ products }) {
         if (product.opening > 500000 - totalInvestments) {
             alert(`No tiene saldo disponible para vincularse al fondo ${product.title}`);
         } else {
+            setHash(uuidv4())
             addToPortfolio(product);
         }
     }
