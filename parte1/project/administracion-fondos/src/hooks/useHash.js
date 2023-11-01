@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { HashContext } from "../context/hash";
+import { HashContext } from "../context/hash.jsx";
 
 
 export const useHash = () => {

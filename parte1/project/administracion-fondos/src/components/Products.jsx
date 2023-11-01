@@ -1,7 +1,7 @@
 import './Products.css'
 import { AddToCartIcon } from './Icons.jsx'
 
-import { usePortfolio } from '../hooks/usePortfolio'
+import { usePortfolio } from '../hooks/usePortfolio.js'
 import { useHash } from '../hooks/useHash.js'
 
 import { v4 as uuidv4 } from 'uuid';
