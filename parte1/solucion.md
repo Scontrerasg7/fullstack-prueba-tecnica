@@ -18,3 +18,5 @@ Le aplicaré un poco de estilos con CSS, para que el usuario tenga una mejor exp
 También quise elegir Vite por encima de Create React App porque la experiencia me ha demostrado que es más ligero y rápido.
 
 Hago uso de contextos y custom hooks para el manejo de estados globales, pues así los puedo compartir a todo el árbol de componentes en React sin usar drilling y crear más dependencias.
+
+Iba a hacer uso del LocalStorage de React para que el usuario pudiera ver los productos que tenía en su portafolio así cerrara la ventana pero me vi un poco corto de tiempo y no lo pude implementar.

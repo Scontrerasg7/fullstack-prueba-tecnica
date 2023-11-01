@@ -18,8 +18,8 @@ export function Products ({ products }) {
         if (product.opening > 500000 - totalInvestments) {
             alert(`No tiene saldo disponible para vincularse al fondo ${product.title}`);
         } else {
-            setHash(uuidv4())
             addToPortfolio(product);
+            setHash(uuidv4())
         }
     }
 
