@@ -3,9 +3,9 @@ Al tener desconocimientos de dockerización al momento de presentar la prueba t�
 los requerimientos que se deben tener para ejecutar la aplicación
 
 * Instalar **Node JS**
-* Correr el comando `npm install` en `parte1\project\administracion-fondos` para instalar las dependencias
-* Correr el comando `npm install uuid` en `parte1\project\administracion-fondos` para poder instalar la librería que generará el identificador único de cada transacción
-* Correr el comando `npm run dev` en `parte1\project\administracion-fondos` para ejecutar la aplicación
+* Correr el comando `npm install` en `parte1\project\administracion-fondos-front` para instalar las dependencias
+* Correr el comando `npm install uuid` en `parte1\project\administracion-fondos-front` para poder instalar la librería que generará el identificador único de cada transacción
+* Correr el comando `npm run dev` en `parte1\project\administracion-fondos-front` para ejecutar la aplicación
 * Abrir el link para correr la aplicación en localhost
     
 # 🧠 Desarrollo de la solución
