@@ -2,30 +2,35 @@ import { RemoveFromCartIcon } from "./Icons.jsx";
 
 import { usePortfolio } from "../hooks/usePortfolio.js";
 import { useHash } from "../hooks/useHash.js";
+import { useTransactions } from "../hooks/useTransactions.js";
 
 import { v4 as uuidv4 } from 'uuid';
 
-function PortfolioItem ({opening, title, id}) {
+function PortfolioItem (product) {
     const {removeFromPortfolio} = usePortfolio()
     const {setHash} = useHash()
+    const {newCancellation} = useTransactions()
 
     const buttonClick = (id) => {
         removeFromPortfolio(id)
-        setHash(uuidv4())
+        const hash = uuidv4()
+        setHash(hash)
+        newCancellation(product, hash)
+
     }
 
     return(
         <li>
             <div>
-                <strong>{title}</strong>
+                <strong>{product.title}</strong>
             </div>
 
             <footer>
                 <small>
-                    COP - {opening}
+                    COP - {product.opening}
                 </small>
             </footer>
-            <button onClick={() => buttonClick(id)}>
+            <button onClick={() => buttonClick(product.id)}>
                 <RemoveFromCartIcon/>
             </button>
         </li>
