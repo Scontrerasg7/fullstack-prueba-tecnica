@@ -13,14 +13,16 @@ function HistoryItem (transaction) {
           <div>
               <strong>
                 {transaction.product.title} <br/>
-                {transaction.id}
               </strong>
           </div>
 
           <footer>
               <small>
                   COP - {transaction.product.opening} <br/>
-                  Tipo: {transaction.type}                  
+                  Tipo: {transaction.type}
+                  <p className="transaction-id">                    
+                  {transaction.id}
+                  </p>
               </small>
           </footer>
       </li>
