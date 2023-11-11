@@ -45,21 +45,43 @@ def get_fondos():
 
     return jsonify(fondos)
 
+###############################################################################3
+
 transactions = []
 @app.route('/transactions', methods=['GET'])
 def get_transactions():
     return jsonify(transactions)
 
-@app.route('/transactions', methods=['PUT', 'DELETE'])
+@app.route('/transactions', methods=['PUT'])
 def modify_transactions():
     data = request.get_json()
 
     if request.method == 'PUT':
         transactions.insert(0, data)
-    elif request.method == 'DELETE':
-        transactions.remove(data)
 
     return jsonify({"message": "Transaction modified successfully"})
+
+###############################################################################3
+
+portfolio = []
+@app.route('/portfolio', methods=['GET'])
+def get_portfolio():
+    return jsonify(portfolio)
+
+@app.route('/portfolio', methods=['PUT', 'DELETE'])
+def modify_portfolio():
+    data = request.get_json()
+
+    if request.method == 'PUT':
+        portfolio.insert(0, data)
+    elif request.method == 'DELETE':
+        portfolio.remove(data)
+
+    
+
+    return jsonify({"message": "Portfolio modified successfully"})
+
+###############################################################################3
 
 if __name__ == '__main__':
     app.run(debug=True)

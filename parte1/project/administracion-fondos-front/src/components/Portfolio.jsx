@@ -11,8 +11,8 @@ function PortfolioItem (product) {
     const {setHash} = useHash()
     const {newCancellation} = useTransactions()
 
-    const buttonClick = (id) => {
-        removeFromPortfolio(id)
+    const buttonClick = (product) => {
+        removeFromPortfolio(product)
         const hash = uuidv4()
         setHash(hash)
         newCancellation(product, hash)
@@ -30,7 +30,7 @@ function PortfolioItem (product) {
                     COP - {product.opening}
                 </small>
             </footer>
-            <button onClick={() => buttonClick(product.id)}>
+            <button onClick={() => buttonClick(product)}>
                 <RemoveFromCartIcon/>
             </button>
         </li>

@@ -6,16 +6,16 @@ export const TransactionsContext = createContext()
 export function TransactionsProvider ({ children }) {
     const [transactions, setTransactions] = useState([])
 
-    const apiUrl = API_URL + '/transactions'; 
+    const apiUrl = API_URL + '/transactions'
 
     useEffect(() => {
         const fetchTransactions = async () => {
         try {
             const response = await fetch(apiUrl);
             const data = await response.json();
-            setTransactions(data);
+            setTransactions(data)
         } catch (error) {
-            console.error(error);
+            console.error(error)
         }
         };
 
@@ -48,7 +48,7 @@ export function TransactionsProvider ({ children }) {
                 ...prevState,
             ]);
         } catch (error) {
-            console.error(error);
+            console.error(error)
         }
         };
 
@@ -78,7 +78,7 @@ export function TransactionsProvider ({ children }) {
                 ...prevState,
             ]);
         } catch (error) {
-            console.error(error);
+            console.error(error)
         }
         };;
 

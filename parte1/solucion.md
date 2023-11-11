@@ -1,5 +1,5 @@
 # 🎁 Requerimientos
-Al tener desconocimientos de dockerización al momento de presentar la prueba técnica, se enlistan
+Al tener desconocimientos de despliegue diferente a AWS al momento de presentar la prueba técnica, se enlistan
 los requerimientos que se deben tener para ejecutar la aplicación
 
 ## Levantar el servidor del Back
