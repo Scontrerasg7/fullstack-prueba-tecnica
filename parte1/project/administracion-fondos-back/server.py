@@ -73,9 +73,12 @@ def modify_portfolio():
     data = request.get_json()
 
     if request.method == 'PUT':
+        print(data)
         portfolio.insert(0, data)
     elif request.method == 'DELETE':
+        print(data)
         portfolio.remove(data)
+        
 
     
 

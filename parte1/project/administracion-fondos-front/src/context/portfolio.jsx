@@ -55,7 +55,7 @@ export function PortfolioProvider ({ children }) {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ product }),
+                body: JSON.stringify( product ),
             });
 
             if (!response.ok) {
