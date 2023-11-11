@@ -4,6 +4,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+
 @app.route('/traer-fondos', methods=['GET'])
 def get_fondos():
 

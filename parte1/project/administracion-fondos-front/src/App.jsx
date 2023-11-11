@@ -13,11 +13,13 @@ import { usePortfolio } from "./hooks/usePortfolio.js"
 import { HashProvider } from "./context/hash.jsx"
 import { TransactionsProvider } from "./context/transactions.jsx"
 
+import { API_URL } from "../../apiUrl.js"
+
 function App() {
   const {filterProducts} = useFilters()
   const [products, setProducts] = useState([])
 
-  const apiUrl = 'http://127.0.0.1:5000/traer-fondos'
+  const apiUrl = API_URL + '/traer-fondos'
   
   useEffect(() => {
       // Realizar la petición de los productos cuando el componente App se monte

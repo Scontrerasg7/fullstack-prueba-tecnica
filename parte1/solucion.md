@@ -2,16 +2,18 @@
 Al tener desconocimientos de dockerización al momento de presentar la prueba técnica, se enlistan
 los requerimientos que se deben tener para ejecutar la aplicación
 
-## Front
+## Levantar el servidor del Back
+* Instalar la libería **Flask** para poder ejecutar el servidor de python
+* Ejecutar el script `server.py` en `parte1\project\administracion-fondos-back` para inicializarlo de manera local, en éste se encuentra la API que se consumirá desde el front
+* El servidor se corre en el puerto local `http://127.0.0.1:5000`, para el cuál el front hace todas las peticiones, pero si por la configuración del equipo o la red se corre desde otro puerto, pido por favor que se cambie la url de la API en el archivo `parte1\project\apiUrl.js`
+
+## Correr el aplicativo del Front
 * Instalar **Node JS**
 * Correr el comando `npm install` en `parte1\project\administracion-fondos-front` para instalar las dependencias
 * Correr el comando `npm install uuid` en `parte1\project\administracion-fondos-front` para poder instalar la librería que generará el identificador único de cada transacción
 * Correr el comando `npm run dev` en `parte1\project\administracion-fondos-front` para ejecutar la aplicación
 * Abrir el link para correr la aplicación en localhost
 
-## Back
-* Instalar la libería **Flask** para poder ejecutar el servidor de python
-* Ejecutar el script `server.py` en `parte1\project\administracion-fondos-back` para inicializarlo de manera local, en éste se encuentra la API que se consumirá desde el front
     
 # 🧠 Desarrollo de la solución
 El cliente necesita un portal web donde vea cuánto saldo tiene disponible y pueda elegir qué productos desea adicionar (aperturas) a su portafolio, por otro lado, en su portafolio, puede decidir qué productos desea retirar (cancelaciones).
